@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+nav {
+    background-color: #202020;
+    box-shadow: 0 0 10px #292929;
+}
+nav h1 {
+    font-family: 'Italianno', cursive;
+    font-size: calc(2.5vw + 15px);
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    color: #960707;
+    text-shadow:-3px 2px 0 #470303;
+}
+.navbar-toggler {
+    scale: 1.3;
+    margin-right: 10px;
+    transition: .2s;
+    padding: 5px 7px;
+    border-radius: 25%;
+    border: none;
+    outline: none;
+    box-shadow: none !important;
+}
+.navbar-toggler:hover {
+    background-color: rgba(141, 113, 141, 0.411);
+}
+.nav-link {
+    cursor: pointer;
+}
+
+#slide-comidas {
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+    background-color: #242424;
+}
+#slide-comidas .carousel-item img {
+    width: 100%;
+    transform: translate(0, -20%);
+    mask-image: linear-gradient(#000, transparent);
+    -webkit-mask-image: linear-gradient(#000, transparent);
+}
+#slide-comidas .carousel-item>.descricao {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    width: 25vw;
+    bottom: -68vh;
+    border-radius: 0 .5em 0 0;
+    padding: 5px 5px 10px 5px;
+    font-size: calc(2vw + 10px);
+    background-color: #bbbbbb;
+}
+.carousel-indicators [data-bs-target] {
+    border: 0;
+    width: 15px;
+    height: 15px;
+    margin: 0 10px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #0000009a;
+}
+.carousel-indicators [data-bs-target].active {
+    scale: 1.3
+}
+#redes-sociais {
+    display: flex;
+    position: relative;
+    bottom: 55px;
+    margin: 10px;
+    justify-content: end;
+}
+#redes-sociais a {
+    cursor: pointer;
+    z-index: 5;
+    margin: 5px;
+    transition: .2s;
+    color: #dbdb;
+    text-shadow: 2px 2px 10px #0000009a;
+}
+#redes-sociais a:hover {
+    scale: 1.5;
+    color: #dbdbdb;
+}
+
+.container {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    grid-template-columns: 2fr 1fr;
+}
+.container hr {
+    grid-column: 1 / span 2;
+}
+
+.cartoes-restaurante {
+    display: grid;
+    gap: 15px;
+}
+
+#slide-restaurante,
+#sobre-restaurante {
+    overflow: hidden;
+    background-color: #242424;
+}
+#slide-restaurante .carousel-indicators {
+    justify-content: flex-end !important;
+}
+#slide-restaurante .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    margin: 0 7px;
+}
+#slide-restaurante .carousel-item img {
+    height: 265px;
+}
+
+#cardapio {
+    text-align: center;
+}
+
+#reserva {
+    grid-column: 1 / span 2;
+}
+#reserva-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#reserva-footer a {
+    cursor: pointer;
+    color: #940f0f;
+}
+#reserva-footer a:hover{
+    text-decoration-line: underline;
+}
+.input-grid-2,
+.input-grid-3 {
+    display: grid;
+    margin: 20px 0;
+    gap: 10px;
+}
+.input-grid-2 {
+    grid-template-columns: 1fr 1fr;
+}
+.input-grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#modal-politica-cancelamento li {
+    margin-top: 10px;
+    font-weight: bolder;
+}
+
+.avaliacao {
+    grid-column: 1 /span 2;
+}
+.avaliacao .card-avaliacao {
+    display: grid;
+    gap: 10px;
+    margin: 24px 0;
+    grid-template-columns: repeat(3, 1fr);
+}
+.avaliacao .card-avaliacao .card-text {
+    text-align: justify;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    color: #dbdbdb;
+    background-color: #202020;
+}
+
+@media screen and (min-width: 860px) {
+    #sobre-restaurante img {
+        height: 265px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 860px) {
+    .row {
+        flex-direction: column;
+    }
+    #sobre-restaurante .row {
+        flex-direction: column-reverse;
+    }
+    .col-md-4,
+    #sobre-restaurante img,
+    #slide-restaurante .d-block {
+        width: 446px !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    nav h1 {
+        font-size: calc(6vw + 15px);
+    }
+    #slide-comidas {
+        height: 36vh;
+    }
+    .carousel-item img {
+        width: 100%;
+        transform: none;
+    }
+    #slide-comidas .carousel-item>.descricao {
+        bottom: -25vh;
+        width: 30vw;
+    }
+    .container {
+        grid-template-columns: 1fr;
+    }
+    #reserva,
+    #cardapio,
+    .avaliacao,
+    .container hr {
+        grid-column: 1;
+    }
+    #reserva-footer {
+        display: block;
+    }
+    .avaliacao .card-avaliacao {
+        grid-template-columns: 1fr;
+    }
+    .input-grid-2,
+    .input-grid-3 {
+        grid-template-columns: 1fr;
+    }
+    #slide-restaurante .carousel-item img {
+        height: 100%;
+        width: 100%;
+    }
+    #sobre-restaurante .row {
+        flex-direction: column-reverse;
+    }
+}
